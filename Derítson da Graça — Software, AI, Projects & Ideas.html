@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Derítson da Graça — Software, AI, Projects & Ideas</title>
+<meta name="description" content="Personal blog of Derítson da Graça — writing about software development, AI, projects, university, technology and the journey of becoming a software engineer.">
+<meta property="og:title" content="Derítson da Graça — Software, AI, Projects & Ideas">
+<meta property="og:description" content="Personal blog of Derítson da Graça — software, AI, projects, university and the journey of becoming a software engineer.">
+<meta property="og:type" content="website">
+<meta name="twitter:card" content="summary">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,700&family=Newsreader:opsz,wght@6..72,400;6..72,500&family=JetBrains+Mono:wght@400&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#eff3f0;--fg:#0f1f1c;--mut:#566d66;--line:#c9d6d0;--sf:#e3ebe7;--ac:#0a7a4a;--hl:#f2c230;--hlfg:#0f1f1c;--d:'Bricolage Grotesque','Segoe UI',system-ui,sans-serif;--s:'Newsreader',Georgia,serif;--m:'JetBrains Mono',ui-monospace,Menlo,monospace;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+@media(prefers-color-scheme:dark){:root:not([data-theme=light]){--bg:#0a1514;--fg:#e7f0eb;--mut:#88a39c;--line:#1d3330;--sf:#0f1f1d;--ac:#f2c230;--hlfg:#0a1514}}
+:root[data-theme=dark]{--bg:#0a1514;--fg:#e7f0eb;--mut:#88a39c;--line:#1d3330;--sf:#0f1f1d;--ac:#f2c230;--hlfg:#0a1514}
+*{box-sizing:border-box}
+html{scroll-padding-top:calc(env(safe-area-inset-top,0px) + 64px);scroll-behavior:smooth}
+body{margin:0;background:var(--bg);color:var(--fg);font:18px/1.62 var(--s);-webkit-font-smoothing:antialiased}
+a{color:inherit}
+:focus-visible{outline:2px solid var(--ac);outline-offset:3px}
+.w{max-width:1040px;margin:0 auto;padding:0 20px}
+header{position:sticky;top:env(safe-area-inset-top,0px);z-index:9;background:var(--bg);border-bottom:1px solid var(--line)}
+header .w{display:flex;align-items:center;gap:16px;height:56px}
+.lg{font:700 20px var(--d);text-decoration:none}
+nav{display:flex;gap:16px;margin-left:auto;font:500 14px var(--d)}
+nav a{text-decoration:none;color:var(--mut)}nav a:hover{color:var(--fg)}
+.ns{display:none;gap:12px;font:500 13px var(--d);color:var(--mut)}
+@media(min-width:900px){.ns{display:flex}}
+#th{background:none;border:1px solid var(--line);color:var(--fg);border-radius:8px;width:34px;height:34px;cursor:pointer;font-size:15px}
+section{padding:56px 0;border-top:1px solid var(--line)}
+.row{display:grid;gap:14px 56px}
+@media(min-width:860px){.row{grid-template-columns:190px 1fr}.row>h2{position:sticky;top:84px;align-self:start}}
+h2{font:700 16px var(--d);color:var(--ac);margin:0}
+h1{font:700 clamp(2.7rem,9.5vw,6rem)/.98 var(--d);letter-spacing:-.03em;margin:0 0 22px}
+h3{font:700 22px/1.25 var(--d);margin:0 0 6px;letter-spacing:-.01em}
+p{margin:0 0 14px;max-width:62ch}
+.mu{color:var(--mut)}
+.hero{border:0;padding:48px 0 56px}
+.hero .w{display:grid;gap:36px}
+@media(min-width:900px){.hero .w{grid-template-columns:1.15fr 1fr;align-items:end}}
+.lede{font-size:20px;color:var(--mut)}
+.bt{display:inline-block;padding:12px 20px;border-radius:8px;border:1px solid var(--fg);text-decoration:none;font:500 15px var(--d);margin:0 10px 10px 0}
+.bt.p{background:var(--hl);color:var(--hlfg);border-color:var(--hl)}
+.code{margin:0;background:var(--sf);border:1px solid var(--line);border-radius:10px;padding:18px;font:13px/1.85 var(--m);overflow-x:auto;white-space:pre}
+.code span{display:block;opacity:0;animation:ln .4s forwards;animation-delay:calc(var(--i)*.4s + .3s)}
+.code b{color:var(--ac);font-weight:400}.code i{color:var(--mut);font-style:normal}
+.cur{display:inline-block;width:8px;height:15px;background:var(--hl);vertical-align:-2px;animation:bl 1s steps(1) infinite}
+@keyframes ln{to{opacity:1}}@keyframes bl{50%{opacity:0}}
+dl{margin:0;display:grid;gap:14px}
+dt{font:500 14px var(--d);color:var(--mut)}dd{margin:0;font:500 22px/1.3 var(--d)}
+.fact{margin-top:22px;padding-left:14px;border-left:3px solid var(--hl)}
+.pl span{display:inline-block;border:1px solid var(--line);border-radius:6px;padding:3px 11px;font:500 14px var(--d);margin:0 8px 8px 0}
+.tl{list-style:none;margin:0;padding:0 0 0 20px;border-left:1px solid var(--line)}
+.tl li{position:relative;padding:0 0 22px 16px}
+.tl li:before{content:"";position:absolute;left:-27px;top:9px;width:11px;height:11px;border-radius:50%;background:var(--bg);border:2px solid var(--ac)}
+.tl .nx:before{background:var(--hl);border-color:var(--hl)}
+.tl b{font:700 18px var(--d)}.tl small{display:block;color:var(--mut)}
+.rv{opacity:0;transform:translateX(-10px);transition:.5s}.rv.in{opacity:1;transform:none}
+.lang{display:flex;flex-wrap:wrap;gap:12px 40px}
+.lang div{font:700 clamp(1.8rem,6vw,2.8rem)/1.1 var(--d);letter-spacing:-.02em}
+.lang small{display:block;font:500 14px var(--d);color:var(--mut);letter-spacing:0}
+.pj{padding:18px 0 18px 18px;border-left:3px solid var(--line);margin-bottom:14px}
+.pj:hover{border-color:var(--hl)}
+.pj a{font:500 15px var(--d);margin-right:16px}
+.sf{display:flex;flex-wrap:wrap;gap:8px;margin:0 0 18px}
+input,textarea{width:100%;font:inherit;background:var(--sf);color:var(--fg);border:1px solid var(--line);border-radius:6px;padding:11px 12px;margin-bottom:10px}
+.sf button{background:none;border:1px solid var(--line);border-radius:6px;padding:4px 12px;font:500 14px var(--d);color:var(--fg);cursor:pointer}
+.sf button[aria-pressed=true]{background:var(--fg);color:var(--bg);border-color:var(--fg)}
+.post{display:grid;gap:2px;padding:20px 0;border-bottom:1px solid var(--line)}
+.post small{font:500 14px var(--d);color:var(--mut)}
+.post h3{background:linear-gradient(var(--hl),var(--hl)) 0 100%/0 3px no-repeat;display:inline;transition:background-size .3s}
+.post:hover h3{background-size:100% 3px}
+.post em{font-style:normal;background:var(--sf);border-radius:4px;padding:1px 7px;margin-left:6px}
+.au{display:flex;gap:16px;align-items:center;margin-top:28px;padding:18px;background:var(--sf);border-radius:10px}
+.av{flex:none;width:64px;height:64px;border-radius:50%;background:var(--hl);color:var(--hlfg);display:grid;place-items:center;font:700 22px var(--d);overflow:hidden}
+.av img{width:100%;height:100%;object-fit:cover}
+.au p{margin:0;font-size:16px}.au a{margin-right:12px;font:500 14px var(--d)}
+#msg{font:500 15px var(--d);color:var(--ac)}
+footer{border-top:1px solid var(--line);padding:32px 0 40px;font-size:15px;color:var(--mut)}
+footer a{margin-right:14px}
+@media(prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important;scroll-behavior:auto!important}.code span,.rv{opacity:1;transform:none}}
+</style>
+</head>
+<body>
+<header><div class="w"><a class="lg" href="#top">dg.</a><nav><a href="#blog">Blog</a><a href="#projects">Projects</a><a href="#journey">Journey</a><a href="#contact">Contact</a></nav><span class="ns" id="ns"></span><button id="th" aria-label="Toggle light and dark mode">◐</button></div></header>
+<main id="top"></main>
+<footer><div class="w" id="ft"></div></footer>
+<script>
+/* ===== EDIT YOUR SITE HERE. Empty values stay hidden. ===== */
+const CONFIG={
+name:"Derítson da Graça",
+tagline:"Student • Developer • Technology Enthusiast",
+route:"São Tomé and Príncipe → Serbia",
+photo:"",            // a data: image URI (add a profile photo later); empty shows initials
+email:"",            // add your email to turn on the contact form
+socials:{github:"https://github.com/Dherry-Maker",linkedin:"",instagram:"",x:"",other:""},
+currently:{learning:"Machine Learning",building:"Web and AI-powered applications",exploring:"How AI can be used to build useful products",reading:"",thinking:""},
+randomFact:"",       // optional
+nowPlaying:{enabled:false,label:"Listening to",value:""}, // optional
+tech:["Java","C","Python","JavaScript","HTML","CSS","React","Git/GitHub","SQL / Databases","Data Structures & Algorithms","Software Testing","AI","Machine Learning","Web development","Application development"],
+learning:["English C1","AI Marketing","Introduction to Database Concepts","Graphic Design Basics with Canva","Generative AI","Software Testing for Beginners","Python for Data Science"],
+languages:[{hi:"Olá",l:"Portuguese",lv:"native"},{hi:"Hello",l:"English",lv:"fluent"},{hi:"Zdravo",l:"Serbian",lv:"fluent"}],
+timeline:[ // add dates in d:"" whenever you want
+{t:"São Tomé and Príncipe",d:"",n:"Where I'm from."},
+{t:"Moving to Serbia",d:"",n:"Went abroad to study."},
+{t:"University of Belgrade / FON",d:"",n:"Information Systems and Technologies."},
+{t:"Learning programming",d:"",n:"Java, C, Python, JavaScript and more."},
+{t:"Building projects",d:"",n:"Learning by making things."},
+{t:"Exploring AI",d:"",n:"Machine learning, generative AI, and where they're actually useful."},
+{t:"Building digital products",d:"",n:"Web and AI-powered applications."},
+{t:"A software engineering career",d:"",n:"Where I'm heading.",next:true}],
+projects:[
+{name:"githubfinalproject",repo:"githubfinalproject",desc:"One of my GitHub repositories. A proper write-up is coming.",tech:[],status:"",demo:"",caseStudy:""},
+{name:"e-plantShopping",repo:"e-plantShopping",desc:"One of my GitHub repositories. A proper write-up is coming.",tech:[],status:"",demo:"",caseStudy:""}],
+categories:["Technology","AI","Machine Learning","Programming","Software Engineering","Web Development","Projects","University","Student Life","Serbia","Personal","Ideas","Tutorials"],
+posts:[ // sample drafts: replace with your own writing
+{t:"Why I Started Building Instead of Just Studying",x:"A draft about moving from theory to making things.",cat:"Personal",tags:["learning","projects"]},
+{t:"My Journey From São Tomé and Príncipe to Software Development",x:"A draft about the road from there to here.",cat:"Personal",tags:["story"]},
+{t:"What University Is Teaching Me About Technology",x:"A draft about what class teaches and what it doesn't.",cat:"University",tags:["fon","study"]},
+{t:"Learning Java as a University Student",x:"A draft on learning Java alongside coursework.",cat:"Programming",tags:["java"]},
+{t:"What Building My First Real Applications Taught Me",x:"A draft on lessons from real projects.",cat:"Projects",tags:["apps","lessons"]},
+{t:"Why I'm Getting Interested in AI and Machine Learning",x:"A draft on what pulled me toward AI.",cat:"AI",tags:["ml","ai"]},
+{t:"Things I Wish I Knew When I Started Programming",x:"A draft of advice to my earlier self.",cat:"Programming",tags:["advice"]},
+{t:"Building Projects While Studying at FON",x:"A draft on balancing projects and coursework.",cat:"Student Life",tags:["fon","time"]}]
+};
+/* ===== rendering ===== */
+const C=CONFIG,$=s=>document.querySelector(s),LB={github:"GitHub",linkedin:"LinkedIn",instagram:"Instagram",x:"X / Twitter",other:"Other"};
+const soc=()=>Object.entries(C.socials).filter(([,u])=>u).map(([k,u])=>`<a href="${u}" target="_blank" rel="noopener noreferrer">${LB[k]}</a>`).join("");
+const gh=C.socials.github.replace(/\/$/,"");
+const code=['<b>const</b> me = {',`  from: "São Tomé and Príncipe",`,`  studying: "Information Systems & Technologies",`,`  learning: "${C.currently.learning}",`,`  building: "${C.currently.building}",`,'<i>  // work in progress</i>','};'].map((l,i)=>`<span style="--i:${i}">${l}</span>`).join("");
+const cur=[["learning","Currently learning"],["building","Currently building"],["exploring","Currently exploring"],["reading","Currently reading"],["thinking","Currently thinking about"]].filter(([k])=>C.currently[k]).map(([k,l])=>`<div><dt>${l}</dt><dd>${C.currently[k]}</dd></div>`).join("");
+const np=C.nowPlaying.enabled&&C.nowPlaying.value?`<div><dt>${C.nowPlaying.label}</dt><dd>${C.nowPlaying.value}</dd></div>`:"";
+const av=C.photo?`<img src="${C.photo}" alt="${C.name}">`:"DG";
+$("#top").innerHTML=`
+<section class="hero"><div class="w"><div><h1>Building things.<br>Learning constantly.</h1><p class="lede">Software, AI, experiments, projects, and everything I discover along the way. This is my personal blog.</p><a class="bt p" href="#blog">Read my blog</a><a class="bt" href="#projects">See my projects</a></div><pre class="code" aria-label="A small code snippet about me">${code}<span style="--i:7">&nbsp;<i class="cur"></i></span></pre></div></section>
+<section><div class="w row"><h2>Hi, I'm Derítson.</h2><div><p>I'm from São Tomé and Príncipe, and I'm studying Information Systems and Technologies at the University of Belgrade in Serbia. I'm interested in software, AI and building digital products.</p><p>I started this site to document the journey: what I'm building, what I'm learning, and what's going wrong along the way.</p><p class="mu">Currently somewhere between writing code and wondering why the code isn't working.</p></div></div></section>
+<section><div class="w row"><h2>Currently</h2><div><dl>${cur}${np}</dl>${C.randomFact?`<p class="fact"><b>Random fact:</b> ${C.randomFact}</p>`:""}</div></div></section>
+<section id="blog"><div class="w row"><h2>Blog</h2><div><input id="q" type="search" placeholder="Search posts" aria-label="Search posts"><div class="sf" id="ch"></div><div id="pg"></div>
+<div class="au"><div class="av">${av}</div><div><p><b>${C.name}</b><br>${C.tagline}<br><span class="mu">${C.route}</span></p><p>${soc()}</p></div></div></div></div></section>
+<section id="projects"><div class="w row"><h2>Projects</h2><div>${C.projects.map(p=>`<div class="pj"><h3>${p.name}</h3><p>${p.desc}</p>${p.tech.length?`<p class="mu">${p.tech.join(", ")}</p>`:""}${p.status?`<p class="mu">Status: ${p.status}</p>`:""}<a href="${gh}/${p.repo}" target="_blank" rel="noopener noreferrer">GitHub</a>${p.demo?`<a href="${p.demo}" target="_blank" rel="noopener noreferrer">Live demo</a>`:""}${p.caseStudy?`<a href="${p.caseStudy}">Case study</a>`:""}</div>`).join("")}<p class="mu">More on <a href="${gh}" target="_blank" rel="noopener noreferrer">my GitHub profile</a>.</p></div></div></section>
+<section id="journey"><div class="w row"><h2>My journey</h2><div><p>I'm from São Tomé and Príncipe. I moved to Serbia to study, and I'm now at the Faculty of Organizational Sciences (FON) at the University of Belgrade. I learn best by building things instead of only studying theory, so that's what I try to do.</p><ol class="tl">${C.timeline.map(e=>`<li class="rv${e.next?" nx":""}"><b>${e.t}</b>${e.d?` <span class="mu">${e.d}</span>`:""}<small>${e.n}</small></li>`).join("")}</ol></div></div></section>
+<section><div class="w row"><h2>What I'm exploring</h2><div><p>Things I've learned, experimented with, and continue to explore.</p><div class="pl">${C.tech.map(t=>`<span>${t}</span>`).join("")}</div><p style="margin-top:18px">Along the way I've also done learning in:</p><div class="pl">${C.learning.map(t=>`<span>${t}</span>`).join("")}</div></div></div></section>
+<section><div class="w row"><h2>Languages</h2><div class="lang">${C.languages.map(l=>`<div>${l.hi}<small>${l.l}, ${l.lv}</small></div>`).join("")}</div></div></section>
+<section id="contact"><div class="w row"><h2>Let's talk.</h2><div><p>Collaboration, projects, technology discussions, opportunities, or just a conversation.</p><form id="cf"><input name="n" placeholder="Name" aria-label="Name" required><input name="e" type="email" placeholder="Email" aria-label="Email" required><input name="s" placeholder="Subject" aria-label="Subject" required><textarea name="m" rows="5" placeholder="Message" aria-label="Message" required></textarea><button class="bt p" type="submit">Send message</button><p id="msg" role="status"></p></form></div></div></section>`;
+$("#ft").innerHTML=`<p><a href="#top">${C.name}</a> ${soc()}</p><p>Sample posts are drafts to replace. No personal details beyond what's shown here.</p>`;
+$("#ns").innerHTML=soc();
+/* blog search + categories */
+let q="",cat="All";const cats=["All",...new Set(C.posts.map(p=>p.cat))];
+const draw=()=>{const r=C.posts.filter(p=>(cat=="All"||p.cat==cat)&&(p.t+p.x+p.cat+p.tags.join(" ")).toLowerCase().includes(q));
+$("#pg").innerHTML=r.map(p=>`<article class="post"><small>${p.cat}<em>Sample draft</em></small><h3><span>${p.t}</span></h3><p class="mu" style="margin:0">${p.x}</p></article>`).join("")||'<p class="mu">No posts match. Try another word or category.</p>';
+$("#ch").innerHTML=cats.map(c=>`<button aria-pressed="${c==cat}" data-c="${c}">${c}</button>`).join("")};
+$("#q").oninput=e=>{q=e.target.value.toLowerCase();draw()};
+$("#ch").onclick=e=>{if(e.target.dataset.c){cat=e.target.dataset.c;draw()}};draw();
+/* contact: only claims sending when an email is configured */
+$("#cf").onsubmit=e=>{e.preventDefault();const f=e.target,m=$("#msg");
+if(!C.email){m.textContent="This form isn't connected to an email yet, so nothing was sent.";return}
+location.href=`mailto:${C.email}?subject=${encodeURIComponent(f.s.value)}&body=${encodeURIComponent(f.m.value+"\n\n"+f.n.value+" ("+f.e.value+")")}`;m.textContent="Opening your email app to send this."};
+/* theme */
+const r=document.documentElement;try{const t=localStorage.getItem("theme");if(t)r.dataset.theme=t}catch(_){}
+$("#th").onclick=()=>{const dark=r.dataset.theme?r.dataset.theme=="dark":matchMedia("(prefers-color-scheme:dark)").matches;r.dataset.theme=dark?"light":"dark";try{localStorage.setItem("theme",r.dataset.theme)}catch(_){}};
+/* timeline reveal */
+const io=new IntersectionObserver(es=>es.forEach(x=>{if(x.isIntersecting){x.target.classList.add("in");io.unobserve(x.target)}}),{threshold:.2});
+document.querySelectorAll(".rv").forEach(el=>io.observe(el));
+</script>
+</body>
+</html>
